@@ -24,7 +24,7 @@ func init() {
        if list == nil {
          list = &d
        }
-       if list != nil {
+       if last != nil {
          last.p = &d
        }
        last = &d
