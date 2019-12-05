@@ -38,6 +38,11 @@ func main() {
 
    //it is safe to delete an absent key.
    delete(users, "Roy")
+   
+   // Iterate over map and notice the results are different(order)
+   for key := range users {
+     fmt.Println(key)
+   } 
 
    fmt.Println("Goodbye.")
 } 
