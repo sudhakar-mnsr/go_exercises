@@ -29,7 +29,9 @@ func main() {
    
    // sendNotification(&u)
    sendNotification(u)
+   // ./interface2.go:31:20: cannot use u (type user) as type notifier in argument to sendNotification:
    // user does not implement notifier (notify method has pointer receiver)
+   // To get rid of the error uncomment sendNotification call with address of u
 }
 
 // sendNotification accepts values that implement the notifier
