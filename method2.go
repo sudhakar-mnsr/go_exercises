@@ -30,7 +30,7 @@ func main() {
    d.displayName()
    d.setAge(45)
    
-   fmt.Println("\nWhat the compiler is Doing:)
+   fmt.Println("\nWhat the compiler is Doing:")
    
    // This is what GO is doing underneath.
    
@@ -64,7 +64,7 @@ func main() {
    f2 := d.setAge
    
    // Call the method via the variable.
-   f2.(45)
+   f2(45)
    
    // Change the value of d.
    d.name = "Sammy"
