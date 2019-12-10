@@ -13,7 +13,7 @@ type AppError struct {
 
 // Error implements the error interface.
 func (c *AppError) Error() string {
-   return fmt.Sprintf("App Error, State: %d", c.state)
+   return fmt.Sprintf("App Error, State: %d", c.State)
 }
 
 func main() {
@@ -31,7 +31,7 @@ func main() {
    
       // Display the stack trace for the error.
       fmt.Println("\n Stack Trace \n***************************")
-      fmt.Printf(%+v\n", err)
+      fmt.Printf("%+v\n", err)
       fmt.Println("\nNo Trace\n***************************")
       fmt.Printf("%v\n", err)
    }
@@ -50,6 +50,7 @@ func secondCall(i int) error {
    if err := thirdCall(); err != nil {
       return errors.Wrap(err, "secondCall->thirdCall()")
    }
+   return nil
 }
 
 // thirdCall create an error value and will validate
