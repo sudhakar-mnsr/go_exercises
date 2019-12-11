@@ -14,23 +14,29 @@ func init() {
 }
 
 func main() {
-// wg is used to manage concurrency.
-var wg sync.WaitGroup
-wg.Add(2)
-
-fmt.Println("Start Goroutines")
-
-// Create a goroutine from the lowercase function.
-go func() {
-   lowercase()
-   wg.Done()
-}()
-
-// Wait for the goroutines to finish.
-fmt.Println("Waiting to finish")
-wg.Wait()
-
-fmt.Println("\nTerminating Program")
+   // wg is used to manage concurrency.
+   var wg sync.WaitGroup
+   wg.Add(2)
+   
+   fmt.Println("Start Goroutines")
+   
+   // Create a goroutine from the lowercase function.
+   go func() {
+      lowercase()
+      wg.Done()
+   }()
+   
+   // Create a goroutine from the uppercase function
+   go func() {
+      uppercase()
+      wg.Done()
+   }()
+   
+   // Wait for the goroutines to finish.
+   fmt.Println("Waiting to finish")
+   wg.Wait()
+   
+   fmt.Println("\nTerminating Program")
 }
 
 // lowercase displays the set of lowercase letters three times.
