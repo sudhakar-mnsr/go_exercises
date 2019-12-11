@@ -28,6 +28,10 @@ func main() {
    
             // Increment our local value of counter.
             value++
+            
+            // look how if uncommented below line changes the result
+            // This is due to context switch added by system call
+            // fmt.Println(value)
    
             // Store the value back into counter
             counter = value
