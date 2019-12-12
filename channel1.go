@@ -17,14 +17,13 @@ func init() {
 
 func main() {
    waitForResult()
-   
-   // waitForResult: You are a manager and you hire a new employee
-   // employee knows immediately what they are expected to do and starts
-   // their work. You sit waiting for the result of the employee's work. The 
-   // amount of time you wait on the employee is unknown because you need a 
-   // guarantee that the result sent by the employee is received by you.
-}
+}   
 
+// waitForResult: You are a manager and you hire a new employee
+// employee knows immediately what they are expected to do and starts
+// their work. You sit waiting for the result of the employee's work. The 
+// amount of time you wait on the employee is unknown because you need a 
+// guarantee that the result sent by the employee is received by you.
 func waitForResult() {
    ch := make(chan string)
    go func() {
