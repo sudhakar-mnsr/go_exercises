@@ -23,7 +23,8 @@ func (d *device) Write(p []byte) (n int, err error) {
    fmt.Print(string(p))
    return len(p), nil
 }
-func main {
+
+func main() {
    // Number of goroutines that will be writing logs.
    const grs = 10
    
@@ -36,7 +37,7 @@ func main {
    for i := 0; i < grs; i++ {
       go func(id int) {
          for {
-            l.Write(fmt.Sprintf("%d: log data , id))
+            l.Write(fmt.Sprintf("%d: log data ", id))
             time.Sleep(10 * time.Millisecond)
          }
       }(i)
